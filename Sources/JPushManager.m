@@ -106,8 +106,7 @@
     
     // 将收到的APNs信息传给个推统计
     [JPUSHService handleRemoteNotification:userInfo];
-//    completionHandler(UIBackgroundFetchResultNewData);
-    completionHandler(UNNotificationPresentationOptionBadge | UNNotificationPresentationOptionSound | UNNotificationPresentationOptionAlert);
+    completionHandler(UIBackgroundFetchResultNewData);
 }
 /**
  解析push消息、透传消息

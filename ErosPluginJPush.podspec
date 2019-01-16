@@ -2,7 +2,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "ErosPluginJPush"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "Eros JPush Plugin"
   s.static_framework = true
 
