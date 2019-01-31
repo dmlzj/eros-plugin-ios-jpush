@@ -2,7 +2,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "ErosPluginJPush"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "Eros JPush Plugin"
   s.static_framework = true
 
@@ -33,8 +33,5 @@ Pod::Spec.new do |s|
   s.libraries       = 'z','resolv'
   s.dependency "WeexSDK"
   s.dependency "JPush"
-  s.xcconfig = {
-    'VALID_ARCHS' =>  'arm64 x86_64',
-  }
-end
+  end
 
