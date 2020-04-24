@@ -49,7 +49,13 @@
 {
     self.isLaunchedByNotification = NO;
 }
-
+//获取应用极光appkey
+-(NSString *)getJpushAppKey
+{
+    NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
+    NSDictionary *jpush = [infoDic objectForKey:@"jpush"];
+    return jpush[@"APP_KEY"];
+}
 #pragma mark - Public Method
 
 - (void)configPushService:(NSDictionary *)info
@@ -57,7 +63,7 @@
     NSUserDefaults * ud = [NSUserDefaults standardUserDefaults];
     NSDictionary * launchOptions = [ud objectForKey:@"launchOptions"];
     [[[JPushWeexPluginModule alloc] init] setupWithOption:launchOptions
-                                                   appKey:info[@"appKey"]?:@"321605d889bf4bdc1f060728"
+                                                   appKey:info[@"appKey"]?:[self getJpushAppKey]
                                                   channel:nil
                                          apsForProduction:0];
     [self registerRemoteNotification];
